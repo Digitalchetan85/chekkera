@@ -1,7 +1,10 @@
 <?php
 
 use App\Http\Livewire\About\AboutComponent;
+use App\Http\Livewire\Admin\AddProject;
 use App\Http\Livewire\Admin\AdminDashboard;
+use App\Http\Livewire\Admin\EditProject;
+use App\Http\Livewire\Admin\Projects;
 use App\Http\Livewire\Buy\BuyComponent;
 use App\Http\Livewire\Contact\ContactComponent;
 use App\Http\Livewire\Details\DetailsComponent;
@@ -42,4 +45,8 @@ Route::middleware(['auth:sanctum','verified'])->group(function () {
 //for Admin 
 Route::middleware(['auth:sanctum','verified','authadmin'])->group(function () {
     Route::get('/admin/dashboard', AdminDashboard::class)->name('admin.dashboard');
+
+    Route::get('/admin/projects', Projects::class)->name('admin.projects');
+    Route::get('/admin/add-projects', AddProject::class)->name('admin.addprojects');
+    Route::get('/admin/edit-projects/{project_id}', EditProject::class)->name('admin.editprojects');
 });

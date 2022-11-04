@@ -100,6 +100,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li class="dropdown-item"><a href="{{route('admin.dashboard')}}">Admin Dashboard</a></li>
+                            <li class="dropdown-item"><a href="{{route('admin.projects')}}">All Projects</a></li>
                             <li class="dropdown-item"><a href="{{ route('logout') }}"
                                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                             </li>
