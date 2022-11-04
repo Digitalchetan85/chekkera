@@ -1,15 +1,20 @@
 //Customized colors
-$primary: #5A2E2C;
-$secondary: #F58634;
+$primary: #5a2e2c;
+$secondary: #f58634;
+$light: #dbdbdb;
+$warning: #ff6700;
+$muted: #f5f5f5;
+$info: #f3f3f3;
+$danger: #f7f4f4;
 
 //import the functions & Variables
 @import "../../../node_modules/bootstrap/scss/functions";
 @import "../../../node_modules/bootstrap/scss/variables";
 
-//custom theme colors 
+//custom theme colors
 $custom-theme-colors: (
-    'white': #ffffff,
-    'black': #000000
+    "white": #ffffff,
+    "black": #000000,
 );
 
 $theme-colors: map-merge($custom-theme-colors, $theme-colors);
@@ -17,20 +22,36 @@ $theme-colors: map-merge($custom-theme-colors, $theme-colors);
 //import Bootstarp
 @import "../../../node_modules/bootstrap/scss/bootstrap";
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
 }
 
-$primary: #5A2E2C;
-$secondary: #F58634;
-$white: #FFFFFF;
+$primary: #5a2e2c;
+$secondary: #f58634;
+$white: #ffffff;
 $black: #000000;
 
 #TopHeader {
     .form-control {
         height: 30px;
+    }
+    .btn {
+        position: absolute;
+        right: 598px;
+        background-color: transparent;
+        border: 0px;
+    }
+}
+@media (min-width: 100px) and (max-width: 500px) {
+    #TopHeader {
+        .btn {
+            position: absolute;
+            right: 32px;
+            background-color: transparent;
+            border: 0px;
+        }
     }
 }
 
@@ -43,5 +64,86 @@ $black: #000000;
         &.active {
             color: $secondary;
         }
+    }
+}
+#MeetOur {
+    .custom {
+        background-image: url("../images/about-bg.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+#PropertyListing {
+    .line {
+        width: 4%;
+        border-top: 5px solid $secondary;
+        margin-bottom: 0.7rem;
+    }
+}
+#FreeEvaluation {
+    .line {
+        width: 12%;
+        margin: 0 auto;
+        border-top: 5px solid #ec9203;
+        margin-bottom: 1.7rem;
+    }
+}
+#ChannelPartner {
+    .line {
+        width: 12%;
+        margin: 0 auto;
+        border-top: 5px solid #ec9203;
+        margin-bottom: 1.7rem;
+    }
+}
+#WhatOur {
+    .line {
+        width: 16%;
+        margin: 0 auto;
+        border-top: 5px solid #ec9203;
+        margin-bottom: 1.7rem;
+    }
+}
+#BuyProperties {
+    .line {
+        width: 5%;
+        border-top: 5px solid #ec9203;
+        margin-bottom: 1.7rem;
+    }
+}
+#RentResidential {
+    .line {
+        width: 6%;
+        border-top: 5px solid #ec9203;
+        margin-bottom: 1.7rem;
+    }
+}
+#SellResidential {
+    .line {
+        width: 4%;
+        border-top: 5px solid #ec9203;
+        margin-bottom: 1.7rem;
+    }
+}
+#ContactInformation {
+    .line {
+        width: 14%;
+        margin: 0 auto;
+        border-top: 5px solid #ec9203;
+        margin-bottom: 1.7rem;
+    }
+}
+#AboutUs {
+    .line {
+        width: 4%;
+        border-top: 5px solid #ec9203;
+        margin-bottom: 1.7rem;
+    }
+}
+#ContactHead {
+    .line {
+        width: 4%;
+        border-top: 5px solid #ec9203;
+        margin-bottom: 1.7rem;
     }
 }
