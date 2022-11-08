@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Admin;
 
+use App\Models\Project;
 use Carbon\Carbon;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -17,12 +18,12 @@ class EditProject extends Component
     public $image;
     public $images;
     public $bedroom;
-    public $bathrooms;
-    public $minfo;
+    public $bathroom;
+    public $info;
     public $price;
-    public $land;
-    public $builtup;
-    public $floor;
+    public $landarea;
+    public $builtuparea;
+    public $floorarea;
     public $parking;
     public $feature;
     public $amenities;
@@ -31,134 +32,128 @@ class EditProject extends Component
     public $newimages;
     public $project_id;
 
-    public function mount($project_id) {
-        $project= Projects::where('id',$project_id)->first();
+    public function mount($project_id)
+    {
+        $project = Project::where('id', $project_id)->first();
         $this->name = $project->name;
         $this->property = $project->property;
         $this->category = $project->category;
         $this->type = $project->type;
         $this->location = $project->location;
         $this->image = $project->image;
-        $this->image = explode(',', $project->images);
+        $this->images = explode(',', $project->images);
         $this->bedroom = $project->bedroom;
-        $this->bathrooms = $project->bathrooms;
-        $this->minfo = $project->minfo;
+        $this->bathroom = $project->bathrooms;
+        $this->info = $project->moreinfo;
         $this->price = $project->price;
-        $this->land = $project->land;
-        $this->builtup = $project->builtup;
-        $this->floor = $project->floor;
-        $this->parking = $project->parking;
+        $this->landarea = $project->landarea;
+        $this->builtuparea = $project->builtuparea;
+        $this->floorarea = $project->floorarea;
+        $this->parking = $project->carparking;
         $this->feature = $project->feature;
         $this->amenities = $project->amenities;
         $this->description = $project->description;
         $this->project_id = $project->id;
     }
 
-    public function updated($fields){
-        $this->validateOnly($fields,[
+    public function updated($fields)
+    {
+        $this->validateOnly($fields, [
             'name' => 'required',
             'property' => 'required',
             'category' => 'required',
             'type' => 'required',
             'location' => 'required',
             'bedroom' => 'required',
-            'bathrooms' => 'required',
-            'minfo' => 'required',
+            'bathroom' => 'required',
+            'info' => 'required',
             'price' => 'required',
-            'land' => 'required',
-            'builtup' => 'required',
-            'floor' => 'required',
+            'landarea' => 'required',
+            'builtuparea' => 'required',
+            'floorarea' => 'required',
             'parking' => 'required',
             'feature' => 'required',
             'amenities' => 'required',
             'description' => 'required',
         ]);
-        if($this->newimage)
-        {
-            $this->validateonly($fields,[
+        if ($this->newimage) {
+            $this->validateOnly($fields, [
                 'newimage' => 'required|mimes:jpeg,jpg,png',
             ]);
         }
-
     }
 
-    public function addproject(){
+    public function updateProject()
+    {
         $this->validate([
-           'name' => 'required',
+            'name' => 'required',
             'property' => 'required',
             'category' => 'required',
             'type' => 'required',
             'location' => 'required',
-            'image' => 'required',
-            'images' => 'required',
             'bedroom' => 'required',
-            'bathrooms' => 'required',
-            'minfo' => 'required',
+            'bathroom' => 'required',
+            'info' => 'required',
             'price' => 'required',
-            'land' => 'required',
-            'builtup' => 'required',
-            'floor' => 'required',
+            'landarea' => 'required',
+            'builtuparea' => 'required',
+            'floorarea' => 'required',
             'parking' => 'required',
             'feature' => 'required',
             'amenities' => 'required',
             'description' => 'required',
         ]);
-        if($this->newimage)
-        {
-            $this->validateonly($fields,[
+        if ($this->newimage) {
+            $this->validate([
                 'newimage' => 'required|mimes:jpeg,jpg,png',
             ]);
         }
-            $project = Projects::find($this->project_id);
-            $project->name = $this->name;
-            $project->property = $this->property;
-            $project->category = $this->category;
-            $project->type = $this->type;
-            $project->location = $this->location;
+        $project = Project::find($this->project_id);
+        // dd($project);
+        $project->name = $this->name;
+        $project->property = $this->property;
+        $project->category = $this->category;
+        $project->type = $this->type;
+        $project->location = $this->location;
 
-            if($this->newimage){
-                unlink('asset/images/projects'.'/'.$project->image);
-                $imagename = Carbon::now()->timestamp.'.'.$this->image->extension();
-                $this->image->storeAs('projects', $imagename);
-                $project->image = $imagename;
-            }
+        if ($this->newimage) {
+            unlink('asset/images/projects' . '/' . $project->image);
+            $imagename = Carbon::now()->timestamp . '.' . $this->image->extension();
+            $this->image->storeAs('projects', $imagename);
+            $project->image = $imagename;
+        }
 
-            if($this->newimages)
-            {
-                if($project->images)
-                {
-                    $images = explode(',', $project->images);
-                    foreach($images as $image)
-                    {
-                        if($image)
-                        {
-                            unlink('asseys/mages/projects'.'/'.$project->image);
-                        }
+        if ($this->newimages) {
+            if ($project->images) {
+                $images = explode(',', $project->images);
+                foreach ($images as $image) {
+                    if ($image) {
+                        unlink('asseys/mages/projects' . '/' . $project->image);
                     }
                 }
-                $imagesname = '';
-                foreach($this->newimages as $key=>$image)
-                {
-                    $imgname = Carbon::now()->timestamp.$key.'.'.$image->extension();
-                    $image->storeAs('projects', $imgname);
-                    $imagename = $imagesname.','.$imgname;
-                }
-                $project->images = $imagesname;
             }
-            $project->bedroom = $this->bedroom;
-            $project->bathroom = $this->bathroom;
-            $project->minfo = $this->minfo;
-            $project->price = $this->price;
-            $project->land = $this->land;
-            $project->builtup = $this->builtup;
-            $project->floor = $this->floor;
-            $project->parking = $this->parking;
-            $project->feature = $this->feature;
-            $project->amenities = $this->amenities;
-            $project->description = $this->description;
-            $project->save();
+            $imagesname = '';
+            foreach ($this->newimages as $key => $image) {
+                $imgname = Carbon::now()->timestamp . $key . '.' . $image->extension();
+                $image->storeAs('projects', $imgname);
+                $imagename = $imagesname . ',' . $imgname;
+            }
+            $project->images = $imagesname;
+        }
+        $project->bedroom = $this->bedroom;
+        $project->bathrooms = $this->bathroom;
+        $project->moreinfo = $this->info;
+        $project->price = $this->price;
+        $project->landarea = $this->landarea;
+        $project->builtuparea = $this->builtuparea;
+        $project->floorarea = $this->floorarea;
+        $project->carparking = $this->parking;
+        $project->feature = $this->feature;
+        $project->amenities = $this->amenities;
+        $project->description = $this->description;
+        $project->save();
 
-            session()->flash('success', 'Project has been added successfully');
+        session()->flash('success', 'Project has been Updated successfully');
     }
 
     public function render()

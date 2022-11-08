@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Admin;
 
+use App\Models\Project;
 use Carbon\Carbon;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -17,8 +18,8 @@ class AddProject extends Component
     public $image;
     public $images;
     public $bedroom;
-    public $bathrooms;
-    public $minfo;
+    public $bathroom;
+    public $info;
     public $price;
     public $land;
     public $builtup;
@@ -39,8 +40,8 @@ class AddProject extends Component
             'image' => 'required',
             'images' => 'required',
             'bedroom' => 'required',
-            'bathrooms' => 'required',
-            'minfo' => 'required',
+            'bathroom' => 'required',
+            'info' => 'required',
             'price' => 'required',
             'land' => 'required',
             'builtup' => 'required',
@@ -62,8 +63,8 @@ class AddProject extends Component
             'image' => 'required',
             'images' => 'required',
             'bedroom' => 'required',
-            'bathrooms' => 'required',
-            'minfo' => 'required',
+            'bathroom' => 'required',
+            'info' => 'required',
             'price' => 'required',
             'land' => 'required',
             'builtup' => 'required',
@@ -73,7 +74,7 @@ class AddProject extends Component
             'amenities' => 'required',
             'description' => 'required',
         ]);
-            $project = new Projects();
+            $project = new Project();
             $project->name = $this->name;
             $project->property = $this->property;
             $project->category = $this->category;
@@ -94,13 +95,13 @@ class AddProject extends Component
                 $project->images = $imagename;
             }
             $project->bedroom = $this->bedroom;
-            $project->bathroom = $this->bathroom;
-            $project->minfo = $this->minfo;
+            $project->bathrooms = $this->bathroom;
+            $project->moreinfo = $this->info;
             $project->price = $this->price;
-            $project->land = $this->land;
-            $project->builtup = $this->builtup;
-            $project->floor = $this->floor;
-            $project->parking = $this->parking;
+            $project->landarea = $this->land;
+            $project->builtuparea = $this->builtup;
+            $project->floorarea = $this->floor;
+            $project->carparking = $this->parking;
             $project->feature = $this->feature;
             $project->amenities = $this->amenities;
             $project->description = $this->description;

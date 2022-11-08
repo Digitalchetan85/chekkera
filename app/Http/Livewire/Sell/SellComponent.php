@@ -2,12 +2,14 @@
 
 namespace App\Http\Livewire\Sell;
 
+use App\Models\Project;
 use Livewire\Component;
 
 class SellComponent extends Component
 {
     public function render()
     {
-        return view('livewire.sell.sell-component')->layout('layouts.base');
+        $projects = Project::where('property', 'sell')->get();
+        return view('livewire.sell.sell-component', compact('projects'))->layout('layouts.base');
     }
 }

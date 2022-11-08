@@ -33,17 +33,16 @@
                         <div class="alert alert-success">{{Session::get('success')}}</div>
                         @endif
                         <div class="table-responsive">
-                            <table class="table table-hovered table-striped">
+                            <table class="table ">
                                 <thead>
                                     <tr>
                                         <th>ID</th>
                                         <th>Name</th>
                                         <th>Property</th>
-                                        <th>Property Category</th>
-                                        <th>Property Type</th>
+                                        <th>Category</th>
+                                        <th>Type</th>
                                         <th>Location</th>
                                         <th>Image</th>
-                                        <th>Images</th>
                                         <th>Bedroom</th>
                                         <th>Bathroom</th>
                                         <th>More Info</th>
@@ -55,11 +54,11 @@
                                         <th>Features</th>
                                         <th>Amenities</th>
                                         <th>Description</th>
-                                        <th>Action</th>  
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($projects as $project)
+                                    @foreach($aprojects as $project)
                                     <tr>
                                         <td>{{$project->id}}</td>
                                         <td>{{$project->name}}</td>
@@ -68,55 +67,52 @@
                                         <td>{{$project->type}}</td>
                                         <td>{{$project->location}}</td>
 
-                                        <td><img src="{{asset('assets/images/fp-products')}}/{{$project->image}}"
+                                        <td><img src="{{asset('assets/images/projects')}}/{{$project->image}}"
                                                 width="60" /></td>
-                                                <td><img src="{{asset('assets/images/fp-products')}}/{{$project->images}}"
-                                                    width="60" /></td>
                                         <td>{{$project->bedroom}}</td>
                                         <td>{{$project->bathrooms}}</td>
-                                        <td>{{$project->more-info}}</td>
+                                        <td>{{$project->moreinfo}}</td>
                                         <td>{{$project->price}}</td>
-                                        <td>{{$project->land-area}}</td>
-                                        <td>{{$project->builtup-area}}</td>
-                                        <td>{{$project->floor-area}}</td>
+                                        <td>{{$project->landarea}}</td>
+                                        <td>{{$project->builtuparea}}</td>
+                                        <td>{{$project->floorarea}}</td>
                                         <td>{{$project->carparking}}</td>
                                         <td>{{$project->feature}}</td>
                                         <td>{{$project->amenities}}</td>
                                         <td>{{$project->description}}</td>
-                                        <td>{{$project->created_at}}</td>
-                                        <td>{{$project->updated_at}}</td>
-                                        
+
                                         <td>
                                             <div class="">
-                                                <a href="{{route('admin.editproduct',['project_id=>$project->id'])}}"><i
+                                                <a href="{{route('admin.editprojects',['project_id'=>$project->id])}}"><i
                                                         class="fa fa-edit"></i></a>
-                                                <a href = 
-    
+
                                                 <!-- Button trigger modal -->
-                                                <a href="#" class="bg-transperant border-0 ml-2" data-toggle="modal"
-                                                    data-target="#exampleModal">
-                                                    <i class="fa fa-trash text-danger"></i>
-                                                </a>
-    
+                                                <button type="button" class="border-0 bg-transparent text-primary ml-2"
+                                                    data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                    <i class="fa fa-trash"></i>
+                                                </button>
+
                                                 <!-- Modal -->
-                                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                                                <div class="modal fade" id="exampleModal" tabindex="-1"
                                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                    <div class="modal-dialog" role="document">
+                                                    <div class="modal-dialog">
                                                         <div class="modal-content">
                                                             <div class="modal-body">
-                                                                Are you sure you want to delete this category.
+                                                                <div class="text-center">
+                                                                    <h4 class="text-dark">Are you sure you want to
+                                                                        delete this category?</h4>
+                                                                </div>
                                                             </div>
-                                                            <div class="modal-footer">
+                                                            <div class="modal-footer justify-content-center">
                                                                 <button type="button" class="btn btn-secondary"
-                                                                    data-dismiss="modal">No</button>
+                                                                    data-dismiss="modal">no</button>
                                                                 <button type="button" class="btn btn-primary"
-                                                                    wire:click.prevent='deleteProduct({{$product->id}})'
-                                                                    data-dismiss="modal">Yes</button>
+                                                                    data-dismiss="modal"
+                                                                    wire:click.prevent='deleteProject({{$project->id}})'>Yes</button>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-    
                                             </div>
                                         </td>
                                     </tr>
@@ -126,7 +122,7 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        {{$products->links()}}
+                        {{$aprojects->links()}}
                     </div>
                 </div>
             </div>

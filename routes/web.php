@@ -35,7 +35,8 @@ Route::get('/about', AboutComponent::class)->name('about');
 Route::get('/contact', ContactComponent::class)->name('contact');
 Route::get('/rent', RentComponent::class)->name('rent');
 Route::get('/sell', SellComponent::class)->name('sell');
-Route::get('/details', DetailsComponent::class)->name('details');
+Route::get('/jd', SellComponent::class)->name('jd');
+Route::get('/project/{project_id}', DetailsComponent::class)->name('project.details');
 
 //for users 
 Route::middleware(['auth:sanctum','verified'])->group(function () {

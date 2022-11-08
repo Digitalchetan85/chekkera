@@ -54,6 +54,16 @@ $black: #000000;
         }
     }
 }
+@media (min-width: 1200px) and (max-width: 1400px) {
+    #TopHeader {
+        .btn {
+            position: absolute;
+            right: 510px;
+            background-color: transparent;
+            border: 0px;
+        }
+    }
+}
 
 #NavBar {
     .nav-link {
@@ -63,6 +73,22 @@ $black: #000000;
         color: $primary;
         &.active {
             color: $secondary;
+        }
+    }
+    .dropdown-menu {
+        background-color: $primary;
+        .dropdown-item {
+            color: $white;
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
+    .dropdown {
+        &:hover {
+            > .dropdown-menu {
+                display: block;
+            }
         }
     }
 }
@@ -146,4 +172,8 @@ $black: #000000;
         border-top: 5px solid #ec9203;
         margin-bottom: 1.7rem;
     }
+}
+
+#login-form {
+    margin: 200px auto;
 }

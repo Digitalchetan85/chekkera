@@ -8,56 +8,47 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="">
-                        <img src="{{ asset('assets/images/image-8.png') }}" alt="" class="img-fluid">
+                    <div class="text-center">
+                        <img src="{{ asset('assets/images/projects') }}/{{ $project->image }}" alt="" class="img-fluid">
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="">
-                        <div class="row">
+                        <div class="row g-3">
+                            @php $images = explode(",",$project->images); @endphp
+                            @foreach($images as $key=>$image)
+                            @if ($image)
                             <div class="col-md-6">
                                 <div class="">
-                                    <img src="{{ asset('assets/images/image-1.png') }}" alt="" class="img-fluid">
+                                    <img src="{{ asset('assets/images/projects') }}/{{ $image }}" alt="" class="img-fluid">
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="">
-                                    <img src="{{ asset('assets/images/image-2.png') }}" alt="" class="img-fluid">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="">
-                                    <img src="{{ asset('assets/images/image-1.png') }}" alt="" class="img-fluid">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="">
-                                    <img src="{{ asset('assets/images/image-2.png') }}" alt="" class="img-fluid">
-                                </div>
-                            </div>
+                            @endif
+                            @endforeach
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <h3 class="text-primary fw-semibold p-2 border-5 border-start border-secondary mb-3 mt-5">Description</h3>
+                    <h3 class="text-primary fw-semibold p-2 border-5 border-start border-secondary mb-3 mt-5">
+                        Description</h3>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6">
                     <ul class="list-unstyled fs-5">
-                        <li>Built Up Area <span class="fw-bold text-primary"> - 2345 sqft</span></li>
-                        <li class="py-3">Price <span class="fw-bold text-primary"> - 2.5 crore</span></li>
-                        <li>Bedrooms <span class="fw-bold text-primary"> - 3BHK+ Servant Rom with Attached bathroom </span> </li>
-                        <li class="py-3">More Info <span class="text-primary fw-bold">- Lorem ipsum dolor sit amet, consectetur adipisicing elit. </span>  </li>
+                        <li>Built Up Area <span class="fw-bold text-primary"> - {{ $project->builtuparea }} sqft</span></li>
+                        <li class="py-3">Price <span class="fw-bold text-primary"> - {{ $project->price }} crore</span></li>
+                        <li>Bedrooms <span class="fw-bold text-primary"> - {{ $project->bedroom }}
+                            </span> </li>
+                        <li class="py-3">More Info <span class="text-primary fw-bold">- {{ $project->moreinfo }}</span> </li>
                     </ul>
                 </div>
                 <div class="col-md-6">
                     <div class="">
                         <ul class="list-unstyled fs-5">
-                            <li class="fw-bold text-primary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse eaque repellendus accusamus beatae debitis mollitia quasi quibusdam voluptatibus tempore,</li>
-                            <li class="py-3 fw-bold text-primary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non error sint sit inventore iusto ea, nostrum esse quo? Minus facere atque tempora hic excepturi voluptatem amet laboriosam ullam minima assumenda!</li>
+                            <li class="fw-bold text-primary">{{$project->description}}</li>
                         </ul>
                     </div>
                 </div>
@@ -78,7 +69,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="">
-                       <h3> Enquire About This Property</h3>
+                        <h3> Enquire About This Property</h3>
                     </div>
                 </div>
             </div>
@@ -92,12 +83,14 @@
                             </div>
                             <div class="col-md-6 py-2">
                                 <label for="inputName" class="form-label text-primary fw-semibold">Phone Number</label>
-                                <input type="tel" class="form-control" id="inputName" placeholder="Enter your Phone number">
+                                <input type="tel" class="form-control" id="inputName"
+                                    placeholder="Enter your Phone number">
                             </div>
-                            
+
                             <div class="col-md-6 py-2">
                                 <label for="inputName" class="form-label text-primary fw-semibold">Email</label>
-                                <input type="email" class="form-control" id="inputName" placeholder="Enter Your Email-Id">
+                                <input type="email" class="form-control" id="inputName"
+                                    placeholder="Enter Your Email-Id">
                             </div>
                             <div class="col-md-6 py-2">
                                 <label for="inputName" class="form-label text-primary fw-semibold">I'm a</label>
@@ -106,12 +99,13 @@
                             <div class="col-md-12 py-2">
                                 <label for="floatingTextarea2" class="text-primary fw-semibold">Message</label>
                                 <textarea class="form-control" placeholder="Message" id="floatingTextarea2"
-                                style="height: 100px"></textarea>
+                                    style="height: 100px"></textarea>
                             </div>
                             <div class="col-12 text-center py-2">
-                                <button class="btn btn-primary rounded-pill px-5 fs-5" type="submit">Request Information</button>
+                                <button class="btn btn-primary rounded-pill px-5 fs-5" type="submit">Request
+                                    Information</button>
                                 <p class="pt-3">By Submitting this form I agree to Terms of Use</p>
-                              </div>
+                            </div>
                         </form>
                     </div>
                 </div>

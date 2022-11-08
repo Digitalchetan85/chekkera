@@ -15,7 +15,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <form wire:submit.prevent='addProduct' enctype="multipart/form-data">
+                        <form wire:submit.prevent='updateProject' enctype="multipart/form-data">
                             <div class="form-group row">
                                 <label for="" class="col-md-4 text-right align-self-center">Name :</label>
                                 <div class="col-md-4">
@@ -73,23 +73,35 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="" class="col-md-4 text-right align-self-center">Project Image :</label>
-                                <div class="col-md-4">
-                                    <input type="file" class="form-control align-self-center" wire:model='image'>
-                                    @if($image)
-                                    <img src="{{$image->temporaryUrl()}}" alt="" class="mt-2">
+                                <label for="" class="col-md-4 text-right align-self-center">Image :</label>
+                                <div class="col-md-4 align-self-center">
+                                    <input type="file" class="form-control" wire:model='newimage'>
+                                    @if($newimage)
+                                        <img src="{{$newimage->temporaryUrl()}}" width="120" alt="" class="mt-2">
+                                    @else
+                                        <img src="{{asset('assets/images/projects')}}/{{ $image }}" width="120" alt="" class="mt-2">
                                     @endif
-                                    @error('image') <small class="text-danger">{{$message}}</small> @enderror
+                                    @error('newimage') <small class="text-danger">{{$message}}</small> @enderror
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="" class="col-md-4 text-right align-self-center">Project Image :</label>
-                                <div class="col-md-4">
-                                    <input type="file" class="form-control align-self-center" wire:model='image'>
-                                    @if($image)
-                                    <img src="{{$image->temporaryUrl()}}" alt="" class="mt-2">
+                                <label for="" class="col-md-4 text-right align-self-center">Images :</label>
+                                <div class="col-md-4 align-self-center">
+                                    <input type="file" class="form-control" wire:model='newimages' multiple="multiple">
+                                    @if($newimages)
+                                        @foreach($newimages as $image)
+                                            @if($image)
+                                                <img src="{{$image->temporaryUrl()}}" width="120" alt="" class="mt-2">
+                                            @endif
+                                        @endforeach
+                                    @else
+                                        @foreach($images as $image)
+                                            @if($image)
+                                                <img src="{{asset('assets/images/projects')}}/{{ $image }}" width="120" alt="" class="mt-2">
+                                            @endif
+                                        @endforeach
                                     @endif
-                                    @error('image') <small class="text-danger">{{$message}}</small> @enderror
+                                    @error('newimages') <small class="text-danger">{{$message}}</small> @enderror
                                 </div>
                             </div>
 
@@ -138,22 +150,22 @@
                             <div class="form-group row">
                                 <label for="" class="col-md-4 text-right align-self-center">Land-Area :</label>
                                 <div class="col-md-4">
-                                    <input type="text" class="form-control align-self-center" wire:model='land'>
-                                    @error('land') <small class="text-danger">{{$message}}</small> @enderror
+                                    <input type="text" class="form-control align-self-center" wire:model='landarea'>
+                                    @error('landarea') <small class="text-danger">{{$message}}</small> @enderror
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="" class="col-md-4 text-right align-self-center">BuiltUp Area :</label>
                                 <div class="col-md-4">
-                                    <input type="text" class="form-control align-self-center" wire:model='builtup'>
-                                    @error('builtup') <small class="text-danger">{{$message}}</small> @enderror
+                                    <input type="text" class="form-control align-self-center" wire:model='builtuparea'>
+                                    @error('builtuparea') <small class="text-danger">{{$message}}</small> @enderror
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="" class="col-md-4 text-right align-self-center">Floor Area :</label>
                                 <div class="col-md-4">
-                                    <input type="text" class="form-control align-self-center" wire:model='floor'>
-                                    @error('floor') <small class="text-danger">{{$message}}</small> @enderror
+                                    <input type="text" class="form-control align-self-center" wire:model='floorarea'>
+                                    @error('floorarea') <small class="text-danger">{{$message}}</small> @enderror
                                 </div>
                             </div>
                             <div class="form-group row">

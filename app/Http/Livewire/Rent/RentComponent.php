@@ -2,12 +2,14 @@
 
 namespace App\Http\Livewire\Rent;
 
+use App\Models\Project;
 use Livewire\Component;
 
 class RentComponent extends Component
 {
     public function render()
     {
-        return view('livewire.rent.rent-component')->layout('layouts.base');
+        $projects = Project::where('property', 'rent')->get();
+        return view('livewire.rent.rent-component', compact('projects'))->layout('layouts.base');
     }
 }

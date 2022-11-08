@@ -11,7 +11,6 @@ return new class extends Migration
      *
      * @return void
      */
-
     public function up()
     {
         Schema::create('projects', function (Blueprint $table) {
@@ -25,11 +24,11 @@ return new class extends Migration
             $table->text('images')->nullable();
             $table->integer('bedroom');
             $table->integer('bathrooms');
-            $table->text('more-info');
+            $table->text('moreinfo');
             $table->decimal('price');
-            $table->string('land-area');
-            $table->string('builtup-area');
-            $table->string('floor-area');
+            $table->string('landarea');
+            $table->string('builtuparea');
+            $table->string('floorarea');
             $table->enum('carparking',['yes','no']);
             $table->enum('feature',['fully-furnished','semi-furnished','un-furnished']);
             $table->string('amenities');

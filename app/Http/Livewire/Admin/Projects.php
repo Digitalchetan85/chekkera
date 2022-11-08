@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Admin;
 
+use App\Models\Project;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -10,7 +11,8 @@ class Projects extends Component
     use WithPagination;
     public function render()
     {
-        $projects = Projects::all();
-        return view('livewire.admin.projects', compact('projects'))->layout('layouts.base');
+        $aprojects = Project::paginate(10);
+        // dd($aprojects);
+        return view('livewire.admin.projects', compact('aprojects'))->layout('layouts.base');
     }
 }

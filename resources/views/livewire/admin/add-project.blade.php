@@ -15,7 +15,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <form wire:submit.prevent='addProduct' enctype="multipart/form-data">
+                        <form wire:submit.prevent='addproject' enctype="multipart/form-data">
                             <div class="form-group row">
                                 <label for="" class="col-md-4 text-right align-self-center">Name :</label>
                                 <div class="col-md-4">
@@ -83,13 +83,15 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="" class="col-md-4 text-right align-self-center">Project Image :</label>
-                                <div class="col-md-4">
-                                    <input type="file" class="form-control align-self-center" wire:model='image'>
-                                    @if($image)
-                                    <img src="{{$image->temporaryUrl()}}" alt="" class="mt-2">
+                                <label for="" class="col-md-4 text-right align-self-center">Project Images:</label>
+                                <div class="col-md-4 align-self-center">
+                                    <input type="file" class="form-control" wire:model='images' multiple>
+                                    @if($images)
+                                        @foreach($images as $image)
+                                            <img src="{{$image->temporaryUrl()}}" width="60" alt="" class="mt-2">
+                                        @endforeach
                                     @endif
-                                    @error('image') <small class="text-danger">{{$message}}</small> @enderror
+                                    @error('images') <small class="text-danger">{{$message}}</small> @enderror
                                 </div>
                             </div>
 

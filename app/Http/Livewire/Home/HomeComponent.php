@@ -2,12 +2,14 @@
 
 namespace App\Http\Livewire\Home;
 
+use App\Models\Project;
 use Livewire\Component;
 
 class HomeComponent extends Component
 {
     public function render()
     {
-        return view('livewire.home.home-component')->layout('layouts.base');
+        $projects = Project::all();
+        return view('livewire.home.home-component', compact('projects'))->layout('layouts.base');
     }
 }

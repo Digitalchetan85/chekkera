@@ -27,230 +27,36 @@
                         class="fa fa-arrow-right"></i></a>
             </div>
             <div class="row g-3 pt-3">
-                <div class="col-md-3">
-                    <div class="bg-white shadow-sm rounded-4 border border-primary">
-                        <div class="text-center">
-                            <img src="{{ asset('assets/images/image-1.png') }}" alt="" class="img-fluid">
-                        </div>
-                        <div class="p-2">
-                            <h6 class="">Independent House</h6>
-                            <div class="row">
-                                <div class="col-6 col-md-6">
-                                    <div class="border-end border-2 border-primary">
-                                        <h5 class="text-primary">₹ 4.5 Cr</h5>
+                @foreach($projects as $project)
+                    <div class="col-md-3">
+                        <div class="bg-white shadow-sm rounded-4 border border-primary">
+                            <div class="text-center">
+                                <img src="{{ asset('assets/images/projects') }}/{{ $project->image }}" alt="" class="img-fluid">
+                            </div>
+                            <div class="p-2">
+                                <h6 class="">{{ $project->type }}</h6>
+                                <div class="row">
+                                    <div class="col-6 col-md-7">
+                                        <div class="border-end border-2 border-primary">
+                                            <h5 class="text-primary">₹ {{ $project->price }} Cr</h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-5">
+                                        <div class="">
+                                            <h5 class="text-primary">{{ $project->builtuparea }} Sqft</h5>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-6 col-md-6">
-                                    <div class="">
-                                        <h5 class="text-primary">2238 Sqft</h5>
-                                    </div>
+                                <div class="">
+                                    <p class="">{{ $project->description }}</p>
                                 </div>
-                            </div>
-                            <div class="">
-                                <p class="">lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor sit</p>
-                            </div>
-                            <div class="">
-                                <button class="btn btn-sm btn-primary rounded-pill">More Details</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="bg-white shadow-sm rounded-4 border border-primary">
-                        <div class="text-center">
-                            <img src="{{ asset('assets/images/image-1.png') }}" alt="" class="img-fluid">
-                        </div>
-                        <div class="p-2">
-                            <h6 class="">Independent House</h6>
-                            <div class="row">
-                                <div class="col-6 col-md-6">
-                                    <div class="border-end border-2 border-primary">
-                                        <h5 class="text-primary">₹ 4.5 Cr</h5>
-                                    </div>
+                                <div class="">
+                                    <a href="{{ route('project.details', ['project_id' => $project->id]) }}" class="btn btn-sm btn-primary rounded-pill">More Details</a>
                                 </div>
-                                <div class="col-6 col-md-6">
-                                    <div class="">
-                                        <h5 class="text-primary">2238 Sqft</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="">
-                                <p class="">lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor sit</p>
-                            </div>
-                            <div class="">
-                                <button class="btn btn-sm btn-primary rounded-pill">More Details</button>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="bg-white shadow-sm rounded-4 border border-primary">
-                        <div class="text-center">
-                            <img src="{{ asset('assets/images/image-1.png') }}" alt="" class="img-fluid">
-                        </div>
-                        <div class="p-2">
-                            <h6 class="">Independent House</h6>
-                            <div class="row">
-                                <div class="col-6 col-md-6">
-                                    <div class="border-end border-2 border-primary">
-                                        <h5 class="text-primary">₹ 4.5 Cr</h5>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-6">
-                                    <div class="">
-                                        <h5 class="text-primary">2238 Sqft</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="">
-                                <p class="">lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor sit</p>
-                            </div>
-                            <div class="">
-                                <button class="btn btn-sm btn-primary rounded-pill">More Details</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="bg-white shadow-sm rounded-4 border border-primary">
-                        <div class="text-center">
-                            <img src="{{ asset('assets/images/image-1.png') }}" alt="" class="img-fluid">
-                        </div>
-                        <div class="p-2">
-                            <h6 class="">Independent House</h6>
-                            <div class="row">
-                                <div class="col-6 col-md-6">
-                                    <div class="border-end border-2 border-primary">
-                                        <h5 class="text-primary">₹ 4.5 Cr</h5>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-6">
-                                    <div class="">
-                                        <h5 class="text-primary">2238 Sqft</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="">
-                                <p class="">lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor sit</p>
-                            </div>
-                            <div class="">
-                                <button class="btn btn-sm btn-primary rounded-pill">More Details</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="bg-white shadow-sm rounded-4 border border-primary">
-                        <div class="text-center">
-                            <img src="{{ asset('assets/images/image-1.png') }}" alt="" class="img-fluid">
-                        </div>
-                        <div class="p-2">
-                            <h6 class="">Independent House</h6>
-                            <div class="row">
-                                <div class="col-6 col-md-6">
-                                    <div class="border-end border-2 border-primary">
-                                        <h5 class="text-primary">₹ 4.5 Cr</h5>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-6">
-                                    <div class="">
-                                        <h5 class="text-primary">2238 Sqft</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="">
-                                <p class="">lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor sit</p>
-                            </div>
-                            <div class="">
-                                <button class="btn btn-sm btn-primary rounded-pill">More Details</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="bg-white shadow-sm rounded-4 border border-primary">
-                        <div class="text-center">
-                            <img src="{{ asset('assets/images/image-1.png') }}" alt="" class="img-fluid">
-                        </div>
-                        <div class="p-2">
-                            <h6 class="">Independent House</h6>
-                            <div class="row">
-                                <div class="col-6 col-md-6">
-                                    <div class="border-end border-2 border-primary">
-                                        <h5 class="text-primary">₹ 4.5 Cr</h5>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-6">
-                                    <div class="">
-                                        <h5 class="text-primary">2238 Sqft</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="">
-                                <p class="">lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor sit</p>
-                            </div>
-                            <div class="">
-                                <button class="btn btn-sm btn-primary rounded-pill">More Details</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="bg-white shadow-sm rounded-4 border border-primary">
-                        <div class="text-center">
-                            <img src="{{ asset('assets/images/image-1.png') }}" alt="" class="img-fluid">
-                        </div>
-                        <div class="p-2">
-                            <h6 class="">Independent House</h6>
-                            <div class="row">
-                                <div class="col-6 col-md-6">
-                                    <div class="border-end border-2 border-primary">
-                                        <h5 class="text-primary">₹ 4.5 Cr</h5>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-6">
-                                    <div class="">
-                                        <h5 class="text-primary">2238 Sqft</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="">
-                                <p class="">lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor sit</p>
-                            </div>
-                            <div class="">
-                                <button class="btn btn-sm btn-primary rounded-pill">More Details</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="bg-white shadow-sm rounded-4 border border-primary">
-                        <div class="text-center">
-                            <img src="{{ asset('assets/images/image-1.png') }}" alt="" class="img-fluid">
-                        </div>
-                        <div class="p-2">
-                            <h6 class="">Independent House</h6>
-                            <div class="row">
-                                <div class="col-6 col-md-6">
-                                    <div class="border-end border-2 border-primary">
-                                        <h5 class="text-primary">₹ 4.5 Cr</h5>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-6">
-                                    <div class="">
-                                        <h5 class="text-primary">2238 Sqft</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="">
-                                <p class="">lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor sit</p>
-                            </div>
-                            <div class="">
-                                <button class="btn btn-sm btn-primary rounded-pill">More Details</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

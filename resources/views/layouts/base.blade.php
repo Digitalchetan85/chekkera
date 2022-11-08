@@ -38,15 +38,16 @@
                 <div class="col-md-4 col-12 align-self-center position-relatiove">
                     <form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-sm btn-white" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <button class="btn btn-sm btn-white" type="submit"><i
+                                class="fa-solid fa-magnifying-glass"></i></button>
                     </form>
                 </div>
                 <div class="col-md-2 col-6 align-self-center">
-                            <div class="">
-                                <a href="{{ route('about') }}" class="text-white text-decoration-none px-2"><small>About
-                                        Us</small></a>
-                                <a href="" class="text-white text-decoration-none px-2"><small>Careers</small></a>
-                            </div>
+                    <div class="">
+                        <a href="{{ route('about') }}" class="text-white text-decoration-none px-2"><small>About
+                                Us</small></a>
+                        <a href="" class="text-white text-decoration-none px-2"><small>Careers</small></a>
+                    </div>
                 </div>
                 <div class="col-md-2 col-6 align-self-center">
                     <div class="text-end">
@@ -75,20 +76,43 @@
                     <li class="nav-item">
                         <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" aria-current="page" href="/">Home</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Properties
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{ route('buy')}}">Buy</a></li>
+                            <li><a class="dropdown-item" href="{{ route('sell')}}">Sell</a></li>
+                            <li><a class="dropdown-item" href="{{ route('rent') }}">Rent</a></li>
+                            <li><a class="dropdown-item" href="{{ route('jd') }}">JD</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Projects
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{ route('buy')}}">Prestige</a></li>
+                        </ul>
+                    </li>
+                    {{-- <li class="nav-item">
                         <a class="nav-link {{ Request::is('buy') ? 'active' : '' }}" href="{{ route('buy')}}">Buy</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ Request::is('sell') ? 'active' : '' }}" href="{{ route('sell')}}">Sell</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ Request::is('rent') ? 'active' : '' }}" href="{{ route('rent') }}">Rent</a>
+                        <a class="nav-link {{ Request::is('rent') ? 'active' : '' }}"
+                            href="{{ route('rent') }}">Rent</a>
+                    </li> --}}
+                    <li class="nav-item">
+                        <a class="nav-link {{ Request::is('jd') ? 'active' : '' }}" href="{{ route('jd') }}">Blogs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">JD</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ Request::is('contact') ? 'active' : '' }}" href="{{ route('contact') }}">Contact Us</a>
+                        <a class="nav-link {{ Request::is('contact') ? 'active' : '' }}"
+                            href="{{ route('contact') }}">Contact Us</a>
                     </li>
                     @if(Route::has('login'))
                     @auth
@@ -136,6 +160,8 @@
                 </ul>
                 <div class="text-center text-md-end">
                     <a href="#" class="text-primary fw-bold fs-5 text-decoration-none"><i
+                            class="fa fa-phone-volume"></i> +91 76191 48458</a><br />
+                    <a href="#" class="text-primary fw-bold fs-5 text-decoration-none"><i
                             class="fa fa-phone-volume"></i> +91 76191 48458</a>
                 </div>
             </div>
@@ -153,8 +179,8 @@
                 <div class="col-md-4">
                     <div class="text-white">
                         <h3>About Us</h3>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos sint beatae similique, hic
-                            mollitia earum, nihil, recusandae atque voluptatem laudantium consequuntur.</p>
+                        <p>Chekkera Properties is a RERA registered Real Estate company established in the year 2017.
+                        </p>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -162,9 +188,8 @@
                         <h3>Contact Us</h3>
                         <div class="text-white">
                             <ul class="list-unstyled">
-                                <li class="py-1"><i class="fa-solid fa-location-dot"></i> Lorem, ipsum dolor sit amet
-                                    consectetur
-                                    adipisicing elit. Iusto ea dolores dignissimos voluptatum eligendi beatae. </li>
+                                <li class="py-1"><i class="fa-solid fa-location-dot"></i> VG-013, First Floor, Pruksa
+                                    Silvana, Budigere Cross, Old Madras Road Bengaluru, Karnataka 560049</li>
                                 <li class="pt-2"><i class="fa-solid fa-phone-volume"></i><a href="tel:09606267947"
                                         class="text-decoration-none text-white"> +91 80 4850 5759</a>
                                 </li>
