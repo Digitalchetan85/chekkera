@@ -49,27 +49,27 @@
 
 
 <x-guest-layout>
-    <div id="login-form" class="my-5 shadow-sm">
+    <div id="login-form" class="my-5">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-3"></div>
-                <div class="col-md-6">
-                    <form id="contactform1" class="contact-form" method="POST" action="{{route('login')}}">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <form id="contactform1" class="contact-form shadow bg-primary rounded px-3 py-5" method="POST" action="{{route('login')}}">
                         @csrf
-                        
-                        <x-jet-validation-errors class="mb-4 text-danger" />
-                        <div class="input-group mb-5">
-                            <span class="input-group-text" id="basic-addon1"><i class="fa fa-user mx-1"></i></span>
+                        <h2 class="mb-3 text-center text-white">Login</h2>
+                        <x-jet-validation-errors class="mb-4 text-white" />
+                        <div class="input-group mb-3">
+                            <span class="input-group-text text-primary" id="basic-addon1"><i class="fa fa-user mx-1"></i></span>
                             <input type="email" name="email" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" :value="old('email')" required autofocus>
                         </div>
-                        <div class="input-group mb-5">
-                            <span class="input-group-text" id="basic-addon1"><i class="fa fa-eye mx-1"></i></span>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text text-primary" id="basic-addon1"><i class="fa fa-eye mx-1"></i></span>
                             <input type="password" name="password" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" :value="old('email')" required autofocus>
                         </div>                          
-                        <button type="submit" class="btn btn-primary w-100"><span>Login</span></button>
+                        <button type="submit" class="btn btn-light form-control fw-semibold text-primary"><span>Login</span></button>
                     </form>
                 </div>
-                <div class="col-md-3"></div>
+                <div class="col-md-4"></div>
             </div>
         </div>
     </div>

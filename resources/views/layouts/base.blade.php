@@ -123,11 +123,9 @@
                             My Account {{Auth::user()->name}}
                         </a>
                         <ul class="dropdown-menu">
-                            <li class="dropdown-item"><a href="{{route('admin.dashboard')}}">Admin Dashboard</a></li>
-                            <li class="dropdown-item"><a href="{{route('admin.projects')}}">All Projects</a></li>
-                            <li class="dropdown-item"><a href="{{ route('logout') }}"
-                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-                            </li>
+                            <li><a class="dropdown-item" href="{{route('admin.dashboard')}}">Admin Dashboard</a></li>
+                            <li><a class="dropdown-item" href="{{route('admin.projects')}}">All Projects</a></li>
+                            <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
                             <form id="logout-form" method="POST" action="{{ route('logout') }}" class="d-none">
                                 @csrf
                             </form>
@@ -140,10 +138,8 @@
                             My Account {{Auth::user()->name}}
                         </a>
                         <ul class="dropdown-menu">
-                            <li class="Dropdown-item"><a href="{{ route('user.dashboard')}}">User Dashboard</a></li>
-                            <li class="Dropdown-item"><a href="{{ route('logout') }}"
-                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-                            </li>
+                            <li><a class="dropdown-item" href="{{ route('user.dashboard')}}">User Dashboard</a></li>
+                            <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
                             <form id="logout-form" method="POST" action="{{ route('logout') }}" class="d-none">
                                 @csrf
                             </form>

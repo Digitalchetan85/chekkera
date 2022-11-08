@@ -15,15 +15,15 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="card">
+                <div class="card my-4">
                     <div class="card-header">
                         <div class="row">
                             <div class="col-md-6">
                                 Projects
                             </div>
                             <div class="col-md-6">
-                                <a href="{{route('admin.addprojects')}}" class="btn-sm btn-dark float-right">
-                                    Add New Projects
+                                <a href="{{route('admin.addprojects')}}" class="btn btn-sm btn-primary text-white float-end">
+                                    Add New Project
                                 </a>
                             </div>
                         </div>

@@ -11,10 +11,12 @@ class AddProject extends Component
 {
     use WithFileUploads;
     public $name;
+    public $project;
     public $property;
     public $category;
     public $type;
     public $location;
+    public $city;
     public $image;
     public $images;
     public $bedroom;
@@ -33,10 +35,12 @@ class AddProject extends Component
     {
         $this->validateOnly($fields,[
             'name' => 'required',
+            'project' => 'required',
             'property' => 'required',
             'category' => 'required',
             'type' => 'required',
             'location' => 'required',
+            'city' => 'required',
             'image' => 'required',
             'images' => 'required',
             'bedroom' => 'required',
@@ -56,10 +60,12 @@ class AddProject extends Component
     public function addproject(){
         $this->validate([
            'name' => 'required',
+           'project' => 'required',
             'property' => 'required',
             'category' => 'required',
             'type' => 'required',
             'location' => 'required',
+            'city' => 'required',
             'image' => 'required',
             'images' => 'required',
             'bedroom' => 'required',
@@ -76,10 +82,12 @@ class AddProject extends Component
         ]);
             $project = new Project();
             $project->name = $this->name;
+            $project->project = $this->project;
             $project->property = $this->property;
             $project->category = $this->category;
             $project->type = $this->type;
             $project->location = $this->location;
+            $project->city = $this->city;
             $imagename = Carbon::now()->timestamp.'.'.$this->image->extension();
             $this->image->storeAs('projects', $imagename);
             $project->image = $imagename;

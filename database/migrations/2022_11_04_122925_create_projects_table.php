@@ -16,10 +16,12 @@ return new class extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->enum('property',['buy','sell','jd','rent']);
-            $table->enum('category',['residential','commercial','jd','rental']);
-            $table->enum('type',['house','flat','villa','row-house','site','land','commercial-space']);
+            $table->enum('project', ['Prestige', 'Total-Environment']);
+            $table->enum('property',['Buy','Sell','JD','Rent']);
+            $table->enum('category',['Residential','Commercial','JD','Rental']);
+            $table->enum('type',['House','Flat','Villa','Row-house','Site','Land','Commercial-space']);
             $table->string('location');
+            $table->string('city');
             $table->string('image')->nullable();
             $table->text('images')->nullable();
             $table->integer('bedroom');
@@ -30,9 +32,9 @@ return new class extends Migration
             $table->string('builtuparea');
             $table->string('floorarea');
             $table->enum('carparking',['yes','no']);
-            $table->enum('feature',['fully-furnished','semi-furnished','un-furnished']);
-            $table->string('amenities');
-            $table->string('description');
+            $table->enum('feature',['Fully-furnished','Semi-furnished','Un-furnished']);
+            $table->longText('amenities');
+            $table->longText('description');
             $table->timestamps();
         });
     }
