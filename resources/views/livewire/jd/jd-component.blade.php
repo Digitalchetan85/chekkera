@@ -2,62 +2,13 @@
     <div id="banner">
         <img src="{{ asset('assets/images/buy-banner.png') }}" alt="" class="img-fluid">
     </div>
-    <div id="SellResidential" class="py-3 py-md-5">
+    <div id="BuyProperties" class="py-3 py-md-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="">
-                        <h2 class="text-primary fw-semibold">Sell Residential</h2>
+                        <h2 class="text-primary fw-semibold">JD Properties</h2>
                         <div class="line rounded"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 fs-4">
-                    <div class="border border border-primary rounded py-2 px-5">
-                        <p>Looking for a <span class="text-primary fw-semibold">ALL RESIDENTIAL,FI...in
-                                Bangalore?</span> <a href="" class="text-secondary">Edit Requirement</a></p>
-                        <p>Find Your right ALL RESIDENTIAL,FI...from 26947+ Properties</p>
-                        <button class="btn border border-secondary rounded-pill text-secondary px-4">Set Alert</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="Properties py-3 py-md-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="">
-                        <ul class="nav nav-tabs">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Properties (30,500)</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Top Agents</a>
-                            </li>
-                        </ul>
-                    </div>
-                    {{-- <div class="text-end">
-                        <ul>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    Sort by : Relevence
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div> --}}
-                    <div class="pt-4 text-primary fs-4">
-                        <p>30500 results Owner Properties for rent in Bangalore</p>
                     </div>
                 </div>
             </div>
@@ -66,7 +17,7 @@
 
     <div id="Appartment" class="">
         @foreach($projects as $project)
-        <div class="container shadow-sm mb-2 bg-body rounded">
+        <div class="container mb-2 bg-body rounded custom-hover">
             <div class="row">
                 <div class="col-md-9">
                     <div class="py-5">
@@ -144,6 +95,7 @@
         </div>
         @endforeach
     </div>
+    
     
     {{-- <div id="Button" class="my-2 my-md-1">
         <div class="container">

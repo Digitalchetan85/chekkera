@@ -13,60 +13,11 @@
                 </div>
             </div>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 fs-4">
-                    <div class="border border border-primary rounded py-2 px-5">
-                        <p>Looking for a <span class="text-primary fw-semibold">ALL RESIDENTIAL,FI...in
-                                Bangalore?</span> <a href="" class="text-secondary">Edit Requirement</a></p>
-                        <p>Find Your right ALL RESIDENTIAL,FI...from 26947+ Properties</p>
-                        <button class="btn border border-secondary rounded-pill text-secondary px-4">Set Alert</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="Properties py-3 py-md-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="">
-                        <ul class="nav nav-tabs">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Properties (26,947)</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">New Projects</a>
-                            </li>
-                        </ul>
-                    </div>
-                    {{-- <div class="text-end">
-                        <ul>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    Sort by : Relevence
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div> --}}
-                    <div class="py-md-4 text-primary fs-4">
-                        <p>{{ $projects->count() }} results Property for Sale in Bangalore without brokerage</p>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
     <div id="Appartment" class="">
         @foreach($projects as $project)
-        <div class="container shadow-sm mb-2 bg-body rounded">
+        <div class="container mb-2 bg-body rounded custom-hover">
             <div class="row">
                 <div class="col-md-9">
                     <div class="py-5">

@@ -107,8 +107,12 @@
                         <a class="nav-link {{ Request::is('rent') ? 'active' : '' }}"
                             href="{{ route('rent') }}">Rent</a>
                     </li> --}}
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link {{ Request::is('jd') ? 'active' : '' }}" href="{{ route('jd') }}">Blogs</a>
+                    </li> --}}
+                    <li class="nav-item">
+                        <a class="nav-link"
+                            href="#">Blogs</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ Request::is('contact') ? 'active' : '' }}"
@@ -120,7 +124,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            My Account {{Auth::user()->name}}
+                            {{Auth::user()->name}}
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{route('admin.dashboard')}}">Admin Dashboard</a></li>
