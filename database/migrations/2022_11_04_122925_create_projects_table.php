@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('slug')->unique();
             $table->enum('project', ['Prestige', 'Total-Environment']);
             $table->enum('property',['Buy','Sell','JD','Rent']);
             $table->enum('category',['Residential','Commercial','JD','Rental']);
@@ -27,7 +28,7 @@ return new class extends Migration
             $table->integer('bedroom');
             $table->integer('bathrooms');
             $table->text('moreinfo');
-            $table->decimal('price');
+            $table->string('price');
             $table->string('landarea');
             $table->string('builtuparea');
             $table->string('floorarea');

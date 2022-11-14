@@ -8,10 +8,12 @@ use Livewire\Component;
 class DetailsComponent extends Component
 {
     public $project_id;
+    public $project_slug;
 
-    public function mount($project_id)
+    public function mount($project_slug)
     {
-        $this->project_id = $project_id;
+        $slug = Project::where('slug', $project_slug)->first();
+        $this->project_id = $slug->id;
     }
 
     public function render()

@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="">
-                        <h2 class="text-primary fw-semibold">Sell Properties</h2>
+                        <h2 class="text-primary fw-semibold">Prestige Projects</h2>
                         <div class="line rounded"></div>
                     </div>
                 </div>

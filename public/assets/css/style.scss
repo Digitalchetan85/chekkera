@@ -180,6 +180,7 @@ $black: #000000;
 
 #Appartment {
     .custom-hover {
+        box-shadow: 2px 3px 8px #ceced4;
         &:hover {
             box-shadow: 2px 3px 8px #ceced4;
         }

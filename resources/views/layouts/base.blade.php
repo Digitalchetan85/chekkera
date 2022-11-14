@@ -36,10 +36,11 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-12 align-self-center position-relatiove">
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <form class="d-flex" role="search" action="{{route('project.search')}}">
+                        <input class="form-control me-2" type="search" placeholder="Search" name="search" aria-label="Search">
                         <button class="btn btn-sm btn-white" type="submit"><i
-                                class="fa-solid fa-magnifying-glass"></i></button>
+                                class="fa-solid fa-magnifying-glass"></i>
+                        </button>
                     </form>
                 </div>
                 <div class="col-md-2 col-6 align-self-center">
@@ -94,7 +95,8 @@
                             Projects
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ route('buy')}}">Prestige</a></li>
+                            <li><a class="dropdown-item" href="{{ route('prestige')}}">Prestige</a></li>
+                            <li><a class="dropdown-item" href="{{ route('total')}}">Total Environment</a></li>
                         </ul>
                     </li>
                     {{-- <li class="nav-item">
@@ -159,10 +161,10 @@
                     @endif
                 </ul>
                 <div class="text-center text-md-end">
-                    <a href="#" class="text-primary fw-bold fs-5 text-decoration-none"><i
-                            class="fa fa-phone-volume"></i> +91 76191 48458</a><br />
-                    <a href="#" class="text-primary fw-bold fs-5 text-decoration-none"><i
-                            class="fa fa-phone-volume"></i> +91 76191 48458</a>
+                    <a href="tel:09986507655" class="text-primary fw-bold fs-5 text-decoration-none"><i
+                            class="fa fa-phone-volume"></i> +91 99865 07655</a><br />
+                    <a href="tel:09606765596" class="text-primary fw-bold fs-5 text-decoration-none"><i
+                            class="fa fa-phone-volume"></i> +91 96067 65596</a>
                 </div>
             </div>
         </div>

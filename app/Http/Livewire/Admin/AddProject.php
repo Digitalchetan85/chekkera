@@ -6,11 +6,13 @@ use App\Models\Project;
 use Carbon\Carbon;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Illuminate\Support\Str;
 
 class AddProject extends Component
 {
     use WithFileUploads;
     public $name;
+    public $slug;
     public $project;
     public $property;
     public $category;
@@ -31,10 +33,16 @@ class AddProject extends Component
     public $amenities;
     public $description;
 
+    public function generateSlug()
+    {
+        $this->slug = Str::slug($this->name);
+    }
+
     public function updated($fields)
     {
         $this->validateOnly($fields,[
             'name' => 'required',
+            'slug' => 'required|unique:projects',
             'project' => 'required',
             'property' => 'required',
             'category' => 'required',
@@ -60,6 +68,7 @@ class AddProject extends Component
     public function addproject(){
         $this->validate([
            'name' => 'required',
+           'slug' => 'required|unique:projects',
            'project' => 'required',
             'property' => 'required',
             'category' => 'required',
@@ -82,6 +91,7 @@ class AddProject extends Component
         ]);
             $project = new Project();
             $project->name = $this->name;
+            $project->slug = $this->slug;
             $project->project = $this->project;
             $project->property = $this->property;
             $project->category = $this->category;

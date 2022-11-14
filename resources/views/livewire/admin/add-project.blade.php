@@ -19,8 +19,15 @@
                             <div class="form-group row mb-2">
                                 <label for="" class="col-md-4 text-end align-self-center">Name :</label>
                                 <div class="col-md-4">
-                                    <input type="text" class="form-control align-self-center" wire:model='name'>
+                                    <input type="text" class="form-control align-self-center" wire:model='name' wire:keyup='generateSlug'>
                                     @error('name') <small class="text-primary">{{$message}}</small> @enderror
+                                </div>
+                            </div>
+                            <div class="form-group row mb-2">
+                                <label for="" class="col-md-4 text-end align-self-center">Slug :</label>
+                                <div class="col-md-4 align-self-center">
+                                    <input type="text" class="form-control" wire:model='slug'>
+                                    @error('slug') <small class="text-primary">{{$message}}</small> @enderror
                                 </div>
                             </div>
                             <div class="form-group row mb-2">

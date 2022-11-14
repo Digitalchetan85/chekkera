@@ -4,13 +4,13 @@
             <button type="button" data-bs-target="#banner" data-bs-slide-to="0" class="active bg-primary"
                 aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#banner" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#banner" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            {{-- <button type="button" data-bs-target="#banner" data-bs-slide-to="2" aria-label="Slide 3"></button> --}}
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="{{ asset('assets/images/banner.png') }}" class="d-block w-100" alt="...">
+                <img src="{{ asset('assets/images/banner-1.png') }}" class="d-block w-100" alt="...">
             </div>
-            <div class="carousel-item active">
+            <div class="carousel-item">
                 <img src="{{ asset('assets/images/banner.png') }}" class="d-block w-100" alt="...">
             </div>
         </div>
@@ -38,7 +38,7 @@
                                 <div class="row">
                                     <div class="col-6 col-md-7">
                                         <div class="border-end border-2 border-primary">
-                                            <h5 class="text-primary">₹ {{ $project->price }} Cr</h5>
+                                            <h5 class="text-primary">₹ {{ $project->price }}*</h5>
                                         </div>
                                     </div>
                                     <div class="col-6 col-md-5">
@@ -51,7 +51,7 @@
                                     <p class="">{{ $project->description }}</p>
                                 </div>
                                 <div class="">
-                                    <a href="{{ route('project.details', ['project_id' => $project->id]) }}" class="btn btn-sm btn-primary rounded-pill">More Details</a>
+                                    <a href="{{ route('project.details', ['project_slug' => $project->slug]) }}" class="btn btn-sm btn-primary rounded-pill">More Details</a>
                                 </div>
                             </div>
                         </div>
