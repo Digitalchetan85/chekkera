@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug')->unique();
-            $table->enum('project', ['Prestige', 'Total-Environment']);
+            $table->enum('project', ['Prestige', 'Total-Environment','Other']);
             $table->enum('property',['Buy','Sell','JD','Rent']);
             $table->enum('category',['Residential','Commercial','JD','Rental']);
             $table->enum('type',['House','Flat','Villa','Row-house','Site','Land','Commercial-space']);
