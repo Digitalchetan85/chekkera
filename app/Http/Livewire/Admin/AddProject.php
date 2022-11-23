@@ -51,17 +51,17 @@ class AddProject extends Component
             'city' => 'required',
             'image' => 'required',
             'images' => 'required',
-            'bedroom' => 'required',
-            'bathroom' => 'required',
+            // 'bedroom' => 'required',
+            // 'bathroom' => 'required',
             'info' => 'required',
-            'price' => 'required',
+            // 'price' => 'required',
             'land' => 'required',
-            'builtup' => 'required',
-            'floor' => 'required',
-            'parking' => 'required',
-            'feature' => 'required',
-            'amenities' => 'required',
-            'description' => 'required',
+            // 'builtup' => 'required',
+            // 'floor' => 'required',
+            // 'parking' => 'required',
+            // 'feature' => 'required',
+            // 'amenities' => 'required',
+            // 'description' => 'required',
         ]);
     }
 
@@ -77,17 +77,17 @@ class AddProject extends Component
             'city' => 'required',
             'image' => 'required',
             'images' => 'required',
-            'bedroom' => 'required',
-            'bathroom' => 'required',
+            // 'bedroom' => 'required',
+            // 'bathroom' => 'required',
             'info' => 'required',
-            'price' => 'required',
+            // 'price' => 'required',
             'land' => 'required',
-            'builtup' => 'required',
-            'floor' => 'required',
-            'parking' => 'required',
-            'feature' => 'required',
-            'amenities' => 'required',
-            'description' => 'required',
+            // 'builtup' => 'required',
+            // 'floor' => 'required',
+            // 'parking' => 'required',
+            // 'feature' => 'required',
+            // 'amenities' => 'required',
+            // 'description' => 'required',
         ]);
             $project = new Project();
             $project->name = $this->name;
@@ -112,17 +112,17 @@ class AddProject extends Component
                 }
                 $project->images = $imagename;
             }
-            $project->bedroom = $this->bedroom;
-            $project->bathrooms = $this->bathroom;
+            // $project->bedroom = $this->bedroom;
+            // $project->bathrooms = $this->bathroom;
             $project->moreinfo = $this->info;
-            $project->price = $this->price;
+            // $project->price = $this->price;
             $project->landarea = $this->land;
-            $project->builtuparea = $this->builtup;
-            $project->floorarea = $this->floor;
-            $project->carparking = $this->parking;
-            $project->feature = $this->feature;
-            $project->amenities = $this->amenities;
-            $project->description = $this->description;
+            // $project->builtuparea = $this->builtup;
+            // $project->floorarea = $this->floor;
+            // $project->carparking = $this->parking;
+            // $project->feature = $this->feature;
+            // $project->amenities = $this->amenities;
+            // $project->description = $this->description;
             $project->save();
 
             session()->flash('success', 'Project has been added successfully');

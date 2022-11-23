@@ -29,9 +29,9 @@
             <div class="row g-3 pt-3">
                 @foreach($projects as $project)
                     <div class="col-md-3">
-                        <div class="bg-white shadow-sm rounded-4 border border-primary">
+                        <div class="bg-white shadow-sm rounded border border-primary">
                             <div class="text-center">
-                                <img src="{{ asset('assets/images/projects') }}/{{ $project->image }}" alt="" class="img-fluid">
+                                <img src="{{ asset('assets/images/projects') }}/{{ $project->image }}" alt="" class="img-fluid rounded">
                             </div>
                             <div class="p-2">
                                 <h6 class="">{{ $project->type }}</h6>

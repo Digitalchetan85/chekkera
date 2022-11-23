@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug')->unique();
-            $table->enum('project', ['Prestige', 'Total-Environment']);
+            $table->enum('project', ['Prestige', 'Total-Environment','Other']);
             $table->enum('property',['Buy','Sell','JD','Rent']);
             $table->enum('category',['Residential','Commercial','JD','Rental']);
             $table->enum('type',['House','Flat','Villa','Row-house','Site','Land','Commercial-space']);
@@ -25,17 +25,17 @@ return new class extends Migration
             $table->string('city');
             $table->string('image')->nullable();
             $table->text('images')->nullable();
-            $table->integer('bedroom');
-            $table->integer('bathrooms');
-            $table->text('moreinfo');
-            $table->string('price');
-            $table->string('landarea');
-            $table->string('builtuparea');
-            $table->string('floorarea');
-            $table->enum('carparking',['yes','no']);
-            $table->enum('feature',['Fully-furnished','Semi-furnished','Un-furnished']);
-            $table->longText('amenities');
-            $table->longText('description');
+            $table->integer('bedroom')->nullable();
+            $table->integer('bathrooms')->nullable();
+            $table->text('moreinfo')->nullable();
+            $table->string('price')->nullable();
+            $table->string('landarea')->nullable();
+            $table->string('builtuparea')->nullable();
+            $table->string('floorarea')->nullable();
+            $table->enum('carparking',['yes','no'])->nullable();
+            $table->enum('feature',['Fully-furnished','Semi-furnished','Un-furnished'])->nullable;
+            $table->longText('amenities')->nullable();
+            $table->longText('description')->nullable();
             $table->timestamps();
         });
     }
