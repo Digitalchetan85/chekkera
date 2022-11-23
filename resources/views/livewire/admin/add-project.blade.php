@@ -37,6 +37,7 @@
                                         <option value="">Select</option>
                                         <option value="Prestige">Prestige</option>
                                         <option value="Total-Environment">Total Environment</option>
+                                        <option value="Other">Other</option>
                                     </select>
                                     @error('project') <small class="text-primary">{{$message}}</small> @enderror
                                 </div>
