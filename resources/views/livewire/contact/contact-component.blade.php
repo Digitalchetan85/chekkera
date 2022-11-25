@@ -80,7 +80,7 @@
                         @error('message') <span class="text-danger">{{ $message }}</span> @enderror
 
                         <div class="mb-3 text-center">
-                            <button type="submit" class="btn btn-primary px-4 rounded-pill">Start Chat</button>
+                            <button type="submit" class="btn btn-primary px-4 rounded-pill">Submit</button>
                         </div>
                         </form>
                     </div>

@@ -30,7 +30,7 @@
                             </div>
 
                             <div class="col-md-8">
-                                <p class="fs-3 mb-0">{{ $project->bedroom }}BHK {{ $project->type }}</p>
+                                <p class="fs-3 mb-0">{{ $project->type }}</p>
                                 <p class="mb-0">{{ $project->location }}</p>
                                 <div class="bg-light rounded my-2 p-3 shadow">
                                     <div class="row">
@@ -45,8 +45,8 @@
                                                     </div>
                                                     <div class="col-md-10 col-10">
                                                         <div class="">
-                                                            <span class="fw-bold">Super Area:</span>
-                                                            <span>{{ $project->builtuparea }} sqft</span>
+                                                            <span class="fw-bold">Area:</span>
+                                                            <span>{{ $project->landarea }} sqft</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -63,8 +63,8 @@
                                                     </div>
                                                     <div class="col-md-10 col-10">
                                                         <div class="">
-                                                            <span class="fw-bold">STATUS:</span>
-                                                            <span>Ready To Move</span>
+                                                            <span class="fw-bold">BHK:</span>
+                                                            <span>{{ $project->bedroom }}</span>
                                                         </div>
                                                     </div>
                                                 </div>

@@ -28,7 +28,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="">
-                        <h2 class="text-primary fw-semibold px-3 border-5 border-start border-secondary m-3">To Meet Our Managing Director</h2>
+                        <h2 class="text-primary fw-semibold px-3 border-5 border-start border-secondary m-3">About Our Managing Partner</h2>
                     </div>
                 </div>
             </div>

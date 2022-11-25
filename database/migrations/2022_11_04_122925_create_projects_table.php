@@ -25,8 +25,8 @@ return new class extends Migration
             $table->string('city');
             $table->string('image')->nullable();
             $table->text('images')->nullable();
-            $table->integer('bedroom')->nullable();
-            $table->integer('bathrooms')->nullable();
+            $table->enum('bedroom',['2','3','4']);
+            $table->enum('bathrooms',['2','3','4']);
             $table->text('moreinfo')->nullable();
             $table->string('price')->nullable();
             $table->string('landarea')->nullable();

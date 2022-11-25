@@ -1,7 +1,7 @@
 <div>
     <div id="ApartmentDetail" class="my-5 my-md-4">
         <div class="container px-5 py-5 bg-danger rounded">
-            <div class="row">
+            <div class="row g-3">
                 <div class="col-md-12">
                     <div class="">
                         <h2 class="text-primary fw-semibold">Apartment: Near Manyata Tceh Park</h2>
@@ -38,8 +38,8 @@
             <div class="row">
                 <div class="col-md-6">
                     <ul class="list-unstyled fs-5">
-                        <li>Built Up Area <span class="fw-bold text-primary"> - {{ $project->builtuparea }} sqft</span></li>
-                        <li class="py-3">Price <span class="fw-bold text-primary"> - {{ $project->price }} crore</span></li>
+                        <li>Land Area <span class="fw-bold text-primary"> - {{ $project->landarea }} sqft</span></li>
+                        <li class="py-3">Price <span class="fw-bold text-primary"> - {{ $project->price }}*</span></li>
                         <li>Bedrooms <span class="fw-bold text-primary"> - {{ $project->bedroom }}
                             </span> </li>
                         <li class="py-3">More Info <span class="text-primary fw-bold">- {{ $project->moreinfo }}</span> </li>

@@ -9,7 +9,8 @@ class JdComponent extends Component
 {
     public function render()
     {
-        $projects = Project::where('property', 'jd')->get();
+        $projects = Project::where('property', 'JD')->get();
+        // dd($projects);
         return view('livewire.jd.jd-component', compact('projects'))->layout('layouts.base');
     }
 }

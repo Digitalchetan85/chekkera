@@ -103,7 +103,7 @@
                                 <div class="col-md-4">
                                     <input type="file" class="form-control align-self-center" wire:model='image'>
                                     @if($image)
-                                    <img src="{{$image->temporaryUrl()}}" alt="" class="mt-2">
+                                    <img src="{{$image->temporaryUrl()}}" alt="" width="120" class="mt-2">
                                     @endif
                                     @error('image') <small class="text-primary">{{$message}}</small> @enderror
                                 </div>
