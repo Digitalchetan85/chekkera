@@ -36,6 +36,13 @@
                             <div class="p-2">
                                 <h6 class="">{{ $project->type }}</h6>
                                 <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="">
+                                            <h6 class="">{{ $project->location }}</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
                                     <div class="col-6 col-md-7">
                                         <div class="border-end border-2 border-primary">
                                             <h5 class="text-primary">₹ {{ $project->price }}*</h5>
@@ -104,7 +111,7 @@
         </div>
     </div>
 
-    <div id="Blogs" class="py-3 py-md-5">
+    {{-- <div id="Blogs" class="py-3 py-md-5">
         <div class="container bg-light p-5">
             <div class="">
                 <h2 class="text-primary fw-semibold p-2 border-5 border-start border-secondary m-3">Popular Blogs</h2>
@@ -156,7 +163,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <div id="WhatOur" class="py-3 py-md-5">
         <div class="container">

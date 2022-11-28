@@ -31,7 +31,7 @@
             <div class="row">
                 <div class="col-md-4 col-12 align-self-center">
                     <div class="text-center text-md-start py-1">
-                        <a href="#" class="text-decoration-none text-white"><i class="fa fa-envelope"></i>
+                        <a href="mailto:prasad@chekkeraproperties.com" class="text-decoration-none text-white"><i class="fa fa-envelope"></i>
                             prasad@chekkeraproperties.com</a>
                     </div>
                 </div>
@@ -47,7 +47,7 @@
                     <div class="">
                         <a href="{{ route('about') }}" class="text-white text-decoration-none px-2"><small>About
                                 Us</small></a>
-                        <a href="" class="text-white text-decoration-none px-2"><small>Careers</small></a>
+                        <a href="{{ route('career') }}" class="text-white text-decoration-none px-2"><small>Careers</small></a>
                     </div>
                 </div>
                 <div class="col-md-2 col-6 align-self-center">
@@ -203,7 +203,7 @@
                                         class="text-decoration-none text-white">
                                         chekkerafrontline@gmail.com</a>
                                 </li>
-                                <li><i class="fa-brands fa-whatsapp"></i><a href="#"
+                                <li><i class="fa-brands fa-whatsapp"></i><a href="tel:099865 07655/ 096067 65596" 
                                         class="text-decoration-none text-white"> +91 99865 07655 / +91 96067 65596</a>
                                 </li>
                             </ul>
@@ -228,13 +228,14 @@
         </div>
     </div>
 
-    <div id="footer-end" class="py-3 py-md-1">
+    <div id="footer-end" class="py-0 py-md-0">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="text-center">
-                        <p class="mb-0">Copyright © XXXX 2022
-                            All Right Reserved.</p>
+                        <small class="">Copyright © Chekkera Properties 2022
+                            All Right Reserved. Design & Developed By <a href="https://shanthaswebz.com" target="_blank" class="text-decoration-none">
+                            Shanthas Webz.</a></small> </p>
                     </div>
                 </div>
             </div>
@@ -258,6 +259,8 @@
     </script>
 
     <script src="{{ asset('assets/js/main.js') }}"></script>
+
+    @stack('scripts')
 
     @livewireScripts
 </body>

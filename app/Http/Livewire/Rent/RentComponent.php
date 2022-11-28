@@ -10,6 +10,7 @@ class RentComponent extends Component
     public function render()
     {
         $projects = Project::where('property', 'rent')->get();
-        return view('livewire.rent.rent-component', compact('projects'))->layout('layouts.base');
+        $oprojects = Project::get()->take(8);
+        return view('livewire.rent.rent-component', compact('projects','oprojects'))->layout('layouts.base');
     }
 }

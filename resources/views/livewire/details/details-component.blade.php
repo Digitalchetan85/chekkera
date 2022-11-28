@@ -76,31 +76,39 @@
             <div class="row justify-content-center bg-light">
                 <div class="col-md-10">
                     <div class="">
-                        <form class="row g-3 mt-4">
+                        <form class="row g-3 mt-4" wire:submit.prevent="SaveData">
                             <div class="col-md-6 py-2">
                                 <label for="inputName" class="form-label text-primary fw-semibold">Name</label>
-                                <input type="text" class="form-control" id="inputName" placeholder="Enter Your Name">
+                                <input type="text" class="form-control" id="inputName" placeholder="Enter Your Name" wire:model='name'>
+                                @error('name') <span class="text-success">{{ $message }}</span> @enderror
                             </div>
                             <div class="col-md-6 py-2">
                                 <label for="inputName" class="form-label text-primary fw-semibold">Phone Number</label>
                                 <input type="tel" class="form-control" id="inputName"
-                                    placeholder="Enter your Phone number">
+                                    placeholder="Enter your Phone number" wire:model='phone'>
+                                    @error('phone') <span class="text-success">{{ $message }}</span> @enderror
                             </div>
 
                             <div class="col-md-6 py-2">
                                 <label for="inputName" class="form-label text-primary fw-semibold">Email</label>
                                 <input type="email" class="form-control" id="inputName"
-                                    placeholder="Enter Your Email-Id">
+                                    placeholder="Enter Your Email-Id" wire:model='email'>
+                                    @error('email') <span class="text-success">{{ $message }}</span> @enderror
                             </div>
                             <div class="col-md-6 py-2">
                                 <label for="inputName" class="form-label text-primary fw-semibold">I'm a</label>
-                                <input type="text" class="form-control" id="inputName" placeholder="I'm a buyer">
+                                <input type="text" class="form-control" id="inputName" placeholder="I'm a buyer" wire:model='buyer'>
+                                @error('buyer') <span class="text-success">{{ $message }}</span> @enderror
                             </div>
                             <div class="col-md-12 py-2">
                                 <label for="floatingTextarea2" class="text-primary fw-semibold">Message</label>
                                 <textarea class="form-control" placeholder="Message" id="floatingTextarea2"
-                                    style="height: 100px"></textarea>
+                                    style="height: 100px" wire:model='message'></textarea>
+                                    @error('message') <span class="text-success">{{ $message }}</span> @enderror
                             </div>
+                            @if(Session::has('success'))
+                            <div class="alert alert-success">{{Session::get('success')}}</div>
+                            @endif
                             <div class="col-12 text-center py-2">
                                 <button class="btn btn-primary rounded-pill px-5 fs-5" type="submit">Request
                                     Information</button>
@@ -116,42 +124,44 @@
     <div id="PropertyListing" class="py-3 py-md-5">
         <div class="container">
             <div class="">
-                <h2 class="text-primary fw-semibold">Other Properties Near by</h2>
+                <h2 class="text-primary fw-semibold">Other Properties</h2>
             </div>
             <div class="text-end">
                 <a href="#" class="text-decoration-none text-primary">See All Properties <i
                         class="fa fa-arrow-right"></i></a>
             </div>
             <div class="row g-3 pt-3">
+                @foreach ($oprojects as $project)
                 <div class="col-md-3">
                     <div class="bg-white shadow-sm rounded-4 border border-primary">
                         <div class="text-center">
                             <img src="{{ asset('assets/images/image-1.png') }}" alt="" class="img-fluid">
                         </div>
                         <div class="p-2">
-                            <h6 class="">Independent House</h6>
+                            <h6 class="">{{ $project->name }}</h6>
                             <div class="row">
                                 <div class="col-6 col-md-6">
                                     <div class="border-end border-2 border-primary">
-                                        <h5 class="text-primary">₹ 4.5 Cr</h5>
+                                        <h5 class="text-primary">₹ {{ $project->price }}</h5>
                                     </div>
                                 </div>
                                 <div class="col-6 col-md-6">
                                     <div class="">
-                                        <h5 class="text-primary">2238 Sqft</h5>
+                                        <h5 class="text-primary">{{ $project->landarea }} Sqft</h5>
                                     </div>
                                 </div>
                             </div>
                             <div class="">
-                                <p class="">lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor sit</p>
+                                <p class="">{{ Str::limit($project->moreinfo, 50) }}</p>
                             </div>
                             <div class="">
-                                <button class="btn btn-sm btn-primary rounded-pill">Contact Owner</button>
+                                <a href="{{ route('project.details', ['project_slug' => $project->slug]) }}" class="btn btn-sm btn-primary rounded-pill">More details</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                @endforeach
+                {{-- <div class="col-md-3">
                     <div class="bg-white shadow-sm rounded-4 border border-primary">
                         <div class="text-center">
                             <img src="{{ asset('assets/images/image-1.png') }}" alt="" class="img-fluid">
@@ -172,84 +182,6 @@
                             </div>
                             <div class="">
                                 <p class="">lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor sit</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="bg-white shadow-sm rounded-4 border border-primary">
-                        <div class="text-center">
-                            <img src="{{ asset('assets/images/image-1.png') }}" alt="" class="img-fluid">
-                        </div>
-                        <div class="p-2">
-                            <h6 class="">Independent House</h6>
-                            <div class="row">
-                                <div class="col-6 col-md-6">
-                                    <div class="border-end border-2 border-primary">
-                                        <h5 class="text-primary">₹ 4.5 Cr</h5>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-6">
-                                    <div class="">
-                                        <h5 class="text-primary">2238 Sqft</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="">
-                                <p class="">lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor sit</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="bg-white shadow-sm rounded-4 border border-primary">
-                        <div class="text-center">
-                            <img src="{{ asset('assets/images/image-1.png') }}" alt="" class="img-fluid">
-                        </div>
-                        <div class="p-2">
-                            <h6 class="">Independent House</h6>
-                            <div class="row">
-                                <div class="col-6 col-md-6">
-                                    <div class="border-end border-2 border-primary">
-                                        <h5 class="text-primary">₹ 4.5 Cr</h5>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-6">
-                                    <div class="">
-                                        <h5 class="text-primary">2238 Sqft</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="">
-                                <p class="">lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor sit</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="bg-white shadow-sm rounded-4 border border-primary">
-                        <div class="text-center">
-                            <img src="{{ asset('assets/images/image-1.png') }}" alt="" class="img-fluid">
-                        </div>
-                        <div class="p-2">
-                            <h6 class="">Independent House</h6>
-                            <div class="row">
-                                <div class="col-6 col-md-6">
-                                    <div class="border-end border-2 border-primary">
-                                        <h5 class="text-primary">₹ 4.5 Cr</h5>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-6">
-                                    <div class="">
-                                        <h5 class="text-primary">2238 Sqft</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="">
-                                <p class="">lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor sit</p>
-                            </div>
-                            <div class="">
-                                <button class="btn btn-sm btn-primary rounded-pill">Contact Owner</button>
                             </div>
                         </div>
                     </div>
@@ -326,9 +258,87 @@
                             <div class="">
                                 <p class="">lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor sit</p>
                             </div>
+                            <div class="">
+                                <button class="btn btn-sm btn-primary rounded-pill">Contact Owner</button>
+                            </div>
+                        </div>
+                    </div>
+                </div> --}}
+                {{-- <div class="col-md-3">
+                    <div class="bg-white shadow-sm rounded-4 border border-primary">
+                        <div class="text-center">
+                            <img src="{{ asset('assets/images/image-1.png') }}" alt="" class="img-fluid">
+                        </div>
+                        <div class="p-2">
+                            <h6 class="">Independent House</h6>
+                            <div class="row">
+                                <div class="col-6 col-md-6">
+                                    <div class="border-end border-2 border-primary">
+                                        <h5 class="text-primary">₹ 4.5 Cr</h5>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-6">
+                                    <div class="">
+                                        <h5 class="text-primary">2238 Sqft</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="">
+                                <p class="">lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor sit</p>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="col-md-3">
+                    <div class="bg-white shadow-sm rounded-4 border border-primary">
+                        <div class="text-center">
+                            <img src="{{ asset('assets/images/image-1.png') }}" alt="" class="img-fluid">
+                        </div>
+                        <div class="p-2">
+                            <h6 class="">Independent House</h6>
+                            <div class="row">
+                                <div class="col-6 col-md-6">
+                                    <div class="border-end border-2 border-primary">
+                                        <h5 class="text-primary">₹ 4.5 Cr</h5>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-6">
+                                    <div class="">
+                                        <h5 class="text-primary">2238 Sqft</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="">
+                                <p class="">lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor sit</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="bg-white shadow-sm rounded-4 border border-primary">
+                        <div class="text-center">
+                            <img src="{{ asset('assets/images/image-1.png') }}" alt="" class="img-fluid">
+                        </div>
+                        <div class="p-2">
+                            <h6 class="">Independent House</h6>
+                            <div class="row">
+                                <div class="col-6 col-md-6">
+                                    <div class="border-end border-2 border-primary">
+                                        <h5 class="text-primary">₹ 4.5 Cr</h5>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-6">
+                                    <div class="">
+                                        <h5 class="text-primary">2238 Sqft</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="">
+                                <p class="">lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor sit</p>
+                            </div>
+                        </div>
+                    </div>
+                </div> --}}
             </div>
         </div>
     </div>
